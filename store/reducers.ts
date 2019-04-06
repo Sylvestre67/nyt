@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 import {
   FETCH_ARTICLE_REQUESTED,
   FETCH_ARTICLE_RECEIVED,
@@ -12,13 +14,13 @@ type Actions = IFetchArticleAction | IFetchArticleReceived;
 interface IArticleState {
   hasError: boolean;
   isLoading: boolean;
-  articles: [] | null;
+  list: [] | null;
 }
 
 const initialState: IArticleState = {
   hasError: false,
   isLoading: false,
-  articles: null
+  list: null
 };
 
 function articles(state = initialState, action: Actions): IArticleState {
@@ -28,15 +30,23 @@ function articles(state = initialState, action: Actions): IArticleState {
     }
     case FETCH_ARTICLE_RECEIVED: {
       const { articles } = action.payload as fetchArticleReceivedPayload;
-      return Object.assign({}, state, { isLoading: true, articles });
+      return Object.assign({}, state, { isLoading: true, list: articles });
     }
     case FETCH_ARTICLE_FAILED: {
       return Object.assign({}, state, {
         isLoading: false,
         hasError: true,
-        articles: null
+        list: null
       });
     }
   }
   return state;
 }
+
+export interface IappStore {
+  articles: IArticleState;
+}
+
+const appStore = combineReducers({ articles });
+
+export default appStore;

@@ -2,91 +2,94 @@
 
 exports[`app should have a test 1`] = `
 <App>
-  <View
-    style={
+  <Provider
+    store={
       Object {
-        "alignItems": "center",
-        "backgroundColor": "#F5FCFF",
-        "flex": 1,
-        "justifyContent": "center",
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#F5FCFF",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }
-    >
-      <Text
-        style={
+    <Connect(HomeScreen)>
+      <HomeScreen
+        articles={
           Object {
-            "fontSize": 20,
-            "margin": 10,
-            "textAlign": "center",
+            "hasError": false,
+            "isLoading": false,
+            "list": null,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "fontSize": 20,
-              "margin": 10,
-              "textAlign": "center",
+              "alignItems": "center",
+              "backgroundColor": "#F5FCFF",
+              "flex": 1,
+              "justifyContent": "center",
             }
           }
         >
-          Welcome to React Native!
-        </Text>
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#333333",
-            "marginBottom": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#333333",
-              "marginBottom": 5,
-              "textAlign": "center",
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#F5FCFF",
+                "flex": 1,
+                "justifyContent": "center",
+              }
             }
-          }
-        >
-          To get started, edit App.tsx
-        </Text>
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#333333",
-            "marginBottom": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#333333",
-              "marginBottom": 5,
-              "textAlign": "center",
-            }
-          }
-        >
-          Press Cmd+R to reload,
+          >
+            <Text
+              style={
+                Object {
+                  "fontSize": 20,
+                  "margin": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "fontSize": 20,
+                    "margin": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Welcome
+              </Text>
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#333333",
+                  "marginBottom": 5,
+                  "textAlign": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#333333",
+                    "marginBottom": 5,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Press Cmd+R to reload,
 Cmd+D or shake for dev menu
-        </Text>
-      </Text>
-    </View>
-  </View>
+              </Text>
+            </Text>
+          </View>
+        </View>
+      </HomeScreen>
+    </Connect(HomeScreen)>
+  </Provider>
 </App>
 `;

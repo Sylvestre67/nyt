@@ -1,7 +1,9 @@
-class ApiServices {
+class Api {
   public fetch(url: string) {
     return fetch(url).then(res => res.json());
   }
 }
 
-export default ApiServices;
+const Client = new Api();
+
+export default Client;
